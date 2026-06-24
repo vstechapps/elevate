@@ -3,12 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run build:css",
     "build:css": "node scripts/build-css.mjs",
+    "build:js": "node scripts/build-js.mjs",
     "dev": "http-static 8010",
-    "start": "pnpm dev"
+    "build": "npm run build:css && npm run build:js",
+    "start": "npm run dev"
   },
   "devDependencies": {
+    "esbuild": "^0.28.1",
     "http-static": "latest"
   }
 }

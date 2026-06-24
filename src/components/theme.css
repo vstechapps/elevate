@@ -4,6 +4,7 @@
 @import "../base/layout.css";
 @import "../base/header.css";
 @import "../base/sidenav.css";
+@import "../base/loader.css";
 
 @import "./buttons.css";
 @import "./cards.css";

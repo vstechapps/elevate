@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const entry = path.join(root, "components", "theme.css");
+const entry = path.join(root, "src","components", "theme.css");
 const outputDir = path.join(root, "docs");
 const outputCss = path.join(outputDir, "elevate.css");
 const outputMinCss = path.join(outputDir, "elevate.min.css");

@@ -49,13 +49,13 @@
   color: var(--text-primary);
 }
 
-.main {
+.main-content {
   margin-top: var(--header-height);
   margin-left: var(--sidenav-width);
   padding: var(--space-md);
   transition: margin-left 0.3s ease;
 }
 
-.main.collapsed {
+.main-content.collapsed {
   margin-left: 60px;
 }
