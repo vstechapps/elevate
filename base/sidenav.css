@@ -1,0 +1,61 @@
+/* Collapsible Sidenav */
+.sidenav {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  height: calc(100% - var(--header-height));
+  width: var(--sidenav-width);
+  background-color: var(--bg-primary);
+  border-right: 1px solid var(--border-color);
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  padding: var(--space-md);
+}
+
+.sidenav.collapsed {
+  width: 60px;
+}
+
+.sidenav .link{
+  width: 100%;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+}
+
+.sidenav .link.active, .sidenav .link:hover {
+  background-color: var(--bg-soft);
+  color: var(--text-primary);
+}
+
+.sidenav .expand-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.sidenav .expand-btn:hover {
+  color: var(--text-primary);
+}
+
+.main {
+  margin-top: var(--header-height);
+  margin-left: var(--sidenav-width);
+  padding: var(--space-md);
+  transition: margin-left 0.3s ease;
+}
+
+.main.collapsed {
+  margin-left: 60px;
+}

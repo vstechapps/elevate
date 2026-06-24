@@ -1,0 +1,45 @@
+<header class="docs-header">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <span>Basic Components</span>
+    <span class="breadcrumb-separator">/</span>
+    <span aria-current="page">Forms</span>
+  </nav>
+  <span class="docs-kicker">Inputs</span>
+  <h1>Forms</h1>
+  <p class="text-lead">Form controls support onboarding, lab submissions, course filters, and feedback flows.</p>
+</header>
+
+<article class="example-card">
+  <div class="example-header">
+    <span class="example-title">Learning profile form</span>
+    <span class="badge badge-primary">Fields</span>
+  </div>
+  <div class="example-preview">
+    <form class="stack">
+      <div class="field">
+        <label for="track">Track</label>
+        <select class="select" id="track">
+          <option>Fullstack JavaScript</option>
+          <option>Backend APIs</option>
+          <option>Frontend Systems</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="goal">Weekly goal</label>
+        <input class="input" id="goal" placeholder="Ship two labs">
+        <span class="field-hint">Keep goals specific and measurable.</span>
+      </div>
+      <label class="check-row">
+        <input type="checkbox" checked>
+        <span>Send progress reminders</span>
+      </label>
+    </form>
+  </div>
+  <div class="example-code">
+    <pre><code>&lt;div class="field"&gt;
+  &lt;label for="goal"&gt;Weekly goal&lt;/label&gt;
+  &lt;input class="input" id="goal" placeholder="Ship two labs"&gt;
+  &lt;span class="field-hint"&gt;Keep goals specific.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</article>

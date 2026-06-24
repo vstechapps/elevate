@@ -1,0 +1,14 @@
+{
+  "name": "elevate-theme",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:css",
+    "build:css": "node scripts/build-css.mjs",
+    "dev": "http-static 8010",
+    "start": "pnpm dev"
+  },
+  "devDependencies": {
+    "http-static": "latest"
+  }
+}

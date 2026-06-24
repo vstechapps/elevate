@@ -1,0 +1,74 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 0.25rem 0.55rem;
+}
+
+.badge-primary {
+  border-color: rgba(22, 119, 210, 0.5);
+  background: rgba(22, 119, 210, 0.14);
+  color: var(--primary-100);
+}
+
+.badge-success {
+  border-color: rgba(44, 195, 107, 0.5);
+  background: rgba(44, 195, 107, 0.14);
+  color: #c8f9d9;
+}
+
+.badge-warning {
+  border-color: rgba(246, 178, 60, 0.5);
+  background: rgba(246, 178, 60, 0.14);
+  color: #ffe7b2;
+}
+
+.badge-danger {
+  border-color: rgba(255, 92, 108, 0.5);
+  background: rgba(255, 92, 108, 0.14);
+  color: #ffdce1;
+}
+
+.badge-xp {
+  border-color: rgba(154, 118, 255, 0.55);
+  background: rgba(154, 118, 255, 0.14);
+  color: var(--violet-100);
+}
+
+.badge-gold {
+  border-color: rgba(255, 209, 102, 0.55);
+  background: rgba(255, 209, 102, 0.13);
+  color: #fff1c2;
+}
+
+.level-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-pill);
+  background: rgba(25, 185, 143, 0.1);
+  color: var(--accent-100);
+  font-weight: 800;
+  padding: 0.35rem 0.7rem 0.35rem 0.4rem;
+}
+
+.level-dot {
+  display: grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--accent-500);
+  color: var(--text-inverse);
+  font-size: 0.8rem;
+}

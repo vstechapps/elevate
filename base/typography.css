@@ -1,0 +1,79 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: var(--leading-tight);
+}
+
+h1,
+.text-display {
+  max-width: 13ch;
+  font-size: clamp(2.5rem, 4rem, 4.5rem);
+  letter-spacing: 0;
+}
+
+h2,
+.text-title {
+  font-size: clamp(1.8rem, 2.6rem, 3rem);
+}
+
+h3,
+.text-subtitle {
+  font-size: 1.35rem;
+}
+
+h4 {
+  font-size: 1.05rem;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+.text-lead {
+  max-width: 68ch;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  line-height: var(--leading-loose);
+}
+
+.text-small {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.text-caption {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary-300), var(--accent-300), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.code,
+code,
+kbd {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xs);
+  background: var(--bg-inset);
+  color: var(--accent-100);
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+}
+
+code,
+kbd {
+  padding: 0.1rem 0.3rem;
+}

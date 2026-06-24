@@ -1,0 +1,64 @@
+<header class="docs-header">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <span aria-current="page">Getting Started</span>
+  </nav>
+  <span class="docs-kicker">Theme docs</span>
+  <h1>Elevate Theme</h1>
+  <p class="text-lead">A professional dark UI theme for gamified fullstack learning platforms, with components for lessons, quests, mastery, progress, and learner operations.</p>
+</header>
+
+<section class="component-note">
+  <h3>Install from GitHub Pages</h3>
+  <p>Use the minified bundle when the repository is published at <code>vstechapps.github.io/elevate</code>.</p>
+  <div class="example-code">
+    <pre><code>&lt;link rel="stylesheet" href="https://vstechapps.github.io/elevate/dist/elevate.min.css"&gt;</code></pre>
+  </div>
+</section>
+
+<article class="example-card">
+  <div class="example-header">
+    <span class="example-title">Build the CSS bundle</span>
+    <span class="badge badge-primary">package.json</span>
+  </div>
+  <div class="example-preview">
+    <div class="docs-grid-tight">
+      <p>Run the build script before publishing so <code>dist/elevate.min.css</code> is available to the docs and external consumers.</p>
+      <div class="cluster">
+        <code>npm run build:css</code>
+        <code>npm run build</code>
+      </div>
+    </div>
+  </div>
+  <div class="example-code">
+    <pre><code>{
+  "scripts": {
+    "build": "npm run build:css",
+    "build:css": "node scripts/build-css.mjs"
+  }
+}</code></pre>
+  </div>
+</article>
+
+<div class="grid grid-3">
+  <article class="card card-interactive">
+    <div class="card-body">
+      <span class="badge badge-primary">Base</span>
+      <h3>Professional surfaces</h3>
+      <p>Tokens, typography, layout utilities, cards, forms, and navigation for serious learning products.</p>
+    </div>
+  </article>
+  <article class="card card-interactive">
+    <div class="card-body">
+      <span class="badge badge-xp">XP</span>
+      <h3>Gamified learning</h3>
+      <p>Progress bars, mastery rings, level pills, badges, and path nodes support learner momentum.</p>
+    </div>
+  </article>
+  <article class="card card-interactive">
+    <div class="card-body">
+      <span class="badge badge-success">Portable</span>
+      <h3>Static friendly</h3>
+      <p>The docs run as one static page and load every section into this main content area.</p>
+    </div>
+  </article>
+</div>

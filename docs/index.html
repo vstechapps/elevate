@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elevate Theme Docs</title>
+    <link rel="stylesheet" href="./elevate.min.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">
+        Elevate <span style="color: var(--text-accent); margin-left: 0.25rem;">Theme</span>
+      </div>
+    </header>
+    <div class="sidenav">
+      <button class="expand-btn" type="button">&laquo;</button>
+      <button class="link active" type="button" data-page="getting-started">Getting Started</button>
+      <button class="link" type="button" data-page="buttons">Buttons</button>
+      <button class="link" type="button" data-page="cards">Cards</button>
+      <button class="link" type="button" data-page="breadcrumb">BreadCrumb</button>
+      <button class="link" type="button" data-page="navigation">Navigation</button>
+      <button class="link" type="button" data-page="forms">Forms</button>
+      <button class="link" type="button" data-page="badge">Badge</button>
+      <button class="link" type="button" data-page="learning-path">Learning Path</button>
+      <button class="link" type="button" data-page="progress-bar">Progress Bar</button>
+      <button class="link" type="button" data-page="leaderboard">Leaderboard</button>
+      <button class="link" type="button" data-page="mastery-ring">Mastery Ring</button>
+    </div>
+
+    <main class="main">
+
+      <section class="docs-main stack-lg" id="docs-content" aria-live="polite">
+        <div class="docs-loader">Loading Getting Started...</div>
+      </section>
+    </main>
+
+    <script>
+      const content = document.querySelector("#docs-content");
+      const navButtons = [...document.querySelectorAll("[data-page]")];
+      const pageCache = new Map();
+
+      async function loadPage(page) {
+        content.innerHTML = '<div class="docs-loader">Loading...</div>';
+
+        try {
+          if (!pageCache.has(page)) {
+            const response = await fetch(`./pages/${page}.html`, { cache: "no-store" });
+
+            if (!response.ok) {
+              throw new Error(`Missing docs page: ${page}`);
+            }
+
+            pageCache.set(page, await response.text());
+          }
+
+          content.innerHTML = pageCache.get(page);
+          content.scrollIntoView({ block: "start" });
+        } catch (error) {
+          content.innerHTML = `
+            <header class="docs-header">
+              <span class="docs-kicker">Load error</span>
+              <h1>Page unavailable</h1>
+              <p class="text-lead">The docs shell could not load this section. Serve the repository with <code>npm run dev</code> or publish it with GitHub Pages so component pages can be fetched.</p>
+            </header>
+          `;
+        }
+      }
+
+      navButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          navButtons.forEach((item) => item.classList.remove("is-active"));
+          button.classList.add("is-active");
+          loadPage(button.dataset.page);
+        });
+      });
+
+      loadPage("getting-started");
+    </script>
+  </body>
+</html>

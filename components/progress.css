@@ -1,0 +1,64 @@
+.progress {
+  overflow: hidden;
+  height: 0.65rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  background: var(--bg-inset);
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent-500), var(--primary-400));
+}
+
+.progress-bar-xp {
+  background: linear-gradient(90deg, var(--violet-400), var(--primary-300));
+}
+
+.progress-bar-streak {
+  background: linear-gradient(90deg, var(--streak), var(--gold));
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.xp-meter {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.skill-ring {
+  --ring-value: 72%;
+
+  display: grid;
+  width: 6rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle closest-side, var(--bg-card) 72%, transparent 73%),
+    conic-gradient(var(--accent-500) var(--ring-value), var(--bg-inset) 0);
+  color: var(--text-primary);
+  font-weight: 900;
+}
+
+.path-line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.path-line::before,
+.path-line::after {
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+  content: "";
+}

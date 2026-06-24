@@ -1,0 +1,36 @@
+<header class="docs-header">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <span>Advanced Comps</span>
+    <span class="breadcrumb-separator">/</span>
+    <span aria-current="page">Mastery Ring</span>
+  </nav>
+  <span class="docs-kicker">Skill mastery</span>
+  <h1>Mastery Ring</h1>
+  <p class="text-lead">Mastery rings use a CSS custom property to show skill confidence, assessment strength, or course completion.</p>
+</header>
+
+<article class="example-card">
+  <div class="example-header">
+    <span class="example-title">Skill rings</span>
+    <span class="badge badge-xp">Mastery</span>
+  </div>
+  <div class="example-preview">
+    <div class="cluster">
+      <div class="stack center">
+        <div class="skill-ring" style="--ring-value: 42%;">42%</div>
+        <span class="text-small">React</span>
+      </div>
+      <div class="stack center">
+        <div class="skill-ring" style="--ring-value: 68%;">68%</div>
+        <span class="text-small">Node.js</span>
+      </div>
+      <div class="stack center">
+        <div class="skill-ring" style="--ring-value: 91%;">91%</div>
+        <span class="text-small">APIs</span>
+      </div>
+    </div>
+  </div>
+  <div class="example-code">
+    <pre><code>&lt;div class="skill-ring" style="--ring-value: 91%;"&gt;91%&lt;/div&gt;</code></pre>
+  </div>
+</article>

@@ -1,0 +1,102 @@
+.btn {
+  --btn-bg: var(--bg-elevated);
+  --btn-color: var(--text-primary);
+  --btn-border: var(--border-strong);
+
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--btn-border);
+  border-radius: var(--radius-sm);
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.7rem 1rem;
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    background var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  border-color: var(--primary-400);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  --btn-bg: linear-gradient(180deg, var(--primary-400), var(--primary-600));
+  --btn-border: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 24px rgba(22, 119, 210, 0.24);
+}
+
+.btn-success {
+  --btn-bg: linear-gradient(180deg, #35d784, #17945a);
+  --btn-border: rgba(255, 255, 255, 0.16);
+  --btn-color: #04140d;
+}
+
+.btn-ghost {
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  color: var(--text-secondary);
+}
+
+.btn-ghost:hover {
+  background: var(--bg-soft);
+  color: var(--text-primary);
+}
+
+.btn-subtle {
+  --btn-bg: rgba(255, 255, 255, 0.05);
+  --btn-border: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.btn-danger {
+  --btn-bg: rgba(255, 92, 108, 0.12);
+  --btn-border: rgba(255, 92, 108, 0.42);
+  color: #ffdce1;
+}
+
+.btn-sm {
+  min-height: 2rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  min-height: 3rem;
+  padding: 0.9rem 1.2rem;
+}
+
+.btn-icon {
+  width: 2.5rem;
+  padding: 0;
+}
+
+.btn-group {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.btn-group .btn {
+  border: 0;
+  border-radius: 0;
+}
+
+.btn-group .btn + .btn {
+  border-left: 1px solid var(--border-color);
+}

@@ -1,0 +1,100 @@
+:root {
+  color-scheme: dark;
+
+  /* Brand */
+  --primary-50: #edf6ff;
+  --primary-100: #d8ecff;
+  --primary-200: #afd7ff;
+  --primary-300: #7bbcff;
+  --primary-400: #3997f4;
+  --primary-500: #1677d2;
+  --primary-600: #0d5eb2;
+  --primary-700: #104c8a;
+  --primary-800: #123f70;
+  --primary-900: #12365e;
+
+  --accent-50: #effdf8;
+  --accent-100: #d6f7eb;
+  --accent-300: #73dec0;
+  --accent-500: #19b98f;
+  --accent-700: #0f8066;
+
+  --violet-100: #efe8ff;
+  --violet-400: #9a76ff;
+  --violet-600: #6d4de8;
+
+  /* Gamification */
+  --xp: #9a76ff;
+  --streak: #ff8a4c;
+  --quest: #19b98f;
+  --success: #2cc36b;
+  --warning: #f6b23c;
+  --danger: #ff5c6c;
+  --gold: #ffd166;
+
+  /* Surfaces */
+  --bg-header: #0f172ae6;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #151d2b;
+  --bg-elevated: #182232;
+  --bg-card: #121a27;
+  --bg-card-hover: #172233;
+  --bg-inset: #080c13;
+  --bg-soft: rgba(255, 255, 255, 0.045);
+
+  /* Text */
+  --text-primary: #f5f7fb;
+  --text-secondary: #b8c3d6;
+  --text-muted: #7f8ca3;
+  --text-inverse: #07111f;
+  --text-accent: #38bdf8;
+  --text-accent-glow: rgba(56, 189, 248, .5);
+
+  /* Borders */
+  --border-color: #263348;
+  --border-strong: #39485f;
+  --border-accent: rgba(25, 185, 143, 0.45);
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.36);
+  --shadow-focus: 0 0 0 3px rgba(22, 119, 210, 0.28);
+
+  /* Spacing */
+  --space-2xs: 0.125rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Typography */
+  --font-primary: Inter, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --leading-tight: 1.15;
+  --leading-normal: 1.55;
+  --leading-loose: 1.75;
+
+  /* Layout */
+  --container-sm: 760px;
+  --container-md: 1040px;
+  --container-lg: 1200px;
+  --header-height: 71px;
+  --sidenav-width: 260px;
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 140ms;
+  --duration-base: 210ms;
+}
