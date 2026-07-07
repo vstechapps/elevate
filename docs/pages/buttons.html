@@ -1,58 +1,106 @@
-<header class="docs-header">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <span>Basic Components</span>
-    <span class="breadcrumb-separator">/</span>
-    <span aria-current="page">Buttons</span>
-  </nav>
-  <span class="docs-kicker">Actions</span>
-  <h1>Buttons</h1>
-  <p class="text-lead">Action styles for lessons, quests, labs, account flows, and destructive operations.</p>
-</header>
+<nav class="breadcrumb text-title" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Buttons</span>
+</nav>
 
-<article class="example-card">
-  <div class="example-header">
-    <span class="example-title">Intent variants</span>
-    <span class="badge badge-primary">Buttons</span>
+<p class="text-lead">
+  Buttons are used for actions, such as submitting forms, opening modals, or navigating to different sections of the application.
+</p>
+
+<article class="card card-interactive">
+  <div class="card-header">
+    <h3>Button Variants</h3>
   </div>
-  <div class="example-preview">
-    <div class="cluster">
+  <div class="card-body">
+      <div class="preview text-lead">
       <button class="btn btn-primary">Start lesson</button>
       <button class="btn btn-success">Submit lab</button>
       <button class="btn btn-subtle">Save draft</button>
-      <button class="btn btn-ghost">Skip</button>
+      <button class="btn btn-ghost">Skip</button> 
       <button class="btn btn-danger">Reset attempt</button>
     </div>
-  </div>
-  <div class="example-code">
-    <pre><code>&lt;button class="btn btn-primary"&gt;Start lesson&lt;/button&gt;
-&lt;button class="btn btn-success"&gt;Submit lab&lt;/button&gt;
-&lt;button class="btn btn-subtle"&gt;Save draft&lt;/button&gt;
-&lt;button class="btn btn-ghost"&gt;Skip&lt;/button&gt;
-&lt;button class="btn btn-danger"&gt;Reset attempt&lt;/button&gt;</code></pre>
+    <div class="code text-sm">
+      <table class="table" disabled rows="5">
+        <tr>
+          <td>&lt;button class="btn btn-primary"&gt;Start lesson&lt;/button&gt;</td>
+          <td>Copy icon</td>
+        </tr>
+        <tr>
+          <td>&lt;button class="btn btn-success"&gt;Submit lab&lt;/button&gt;</td>
+          <td>Copy icon</td>  
+        </tr>
+        <tr>
+          <td>&lt;button class="btn btn-subtle"&gt;Save draft&lt;/button&gt;</td>
+          <td>Copy icon</td>
+        </tr>
+        <tr>
+          <td>&lt;button class="btn btn-ghost"&gt;Skip&lt;/button&gt;</td>
+          <td>Copy icon</td>
+        </tr>
+        <tr>
+          <td>&lt;button class="btn btn-danger"&gt;Reset attempt&lt;/button&gt;</td>
+          <td>Copy icon</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </article>
 
-<article class="example-card">
-  <div class="example-header">
-    <span class="example-title">Sizes and groups</span>
-    <span class="badge badge-primary">Controls</span>
+<article class="card card-interactive">
+  <div class="card-header">
+    <h3>Button Sizes</h3>
   </div>
-  <div class="example-preview">
-    <div class="cluster">
+  <div class="card-body">
+      <div class="preview text-lead">
       <button class="btn btn-primary btn-sm">Small</button>
       <button class="btn btn-primary">Default</button>
       <button class="btn btn-primary btn-lg">Large</button>
+    </div>
+    <div class="code text-sm">
+      <table class="table" disabled rows="5">
+        <tr>
+          <td>&lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;</td>
+          <td>Copy icon</td>
+        </tr>
+        <tr>
+          <td>&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;</td>
+          <td>Copy icon</td>  
+        </tr>
+        <tr>
+          <td>&lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;</td>
+          <td>Copy icon</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</article>
+
+<article class="card card-interactive">
+  <div class="card-header">
+    <h3>Button Groups</h3>
+  </div>
+  <div class="card-body">
+      <div class="preview text-lead">
       <div class="btn-group" aria-label="Lesson view">
         <button class="btn btn-subtle">Theory</button>
         <button class="btn btn-subtle">Practice</button>
         <button class="btn btn-subtle">Review</button>
       </div>
+      </div>
+    <div class="code text-sm">
+      <table class="table" disabled rows="5">
+        <tr>
+          <td>
+            &lt;div class="btn-group" aria-label="Lesson view"&gt;<br>
+              &emsp;&lt;button class="btn btn-subtle"&gt;Theory&lt;/button&gt;<br>
+              &emsp;&lt;button class="btn btn-subtle"&gt;Practice&lt;/button&gt;<br>
+              &emsp;&lt;button class="btn btn-subtle"&gt;Review&lt;/button&gt;<br>
+            &lt;/div&gt;
+          </td>
+          <td>Copy icon</td>
+        </tr>
+      </table>
     </div>
-  </div>
-  <div class="example-code">
-    <pre><code>&lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
-&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;
-&lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;
-&lt;div class="btn-group" aria-label="Lesson view"&gt;...&lt;/div&gt;</code></pre>
   </div>
 </article>

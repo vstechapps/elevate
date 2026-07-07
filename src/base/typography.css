@@ -10,27 +10,12 @@ h6 {
   line-height: var(--leading-tight);
 }
 
-h1{
-  font-size: clamp(2.5rem, 4rem, 4.5rem);
-  letter-spacing: 0;
-}
-
-h2,
 .text-title {
   font-size: clamp(1.8rem, 2.6rem, 3rem);
 }
 
-h3,
 .text-subtitle {
   font-size: 1.35rem;
-}
-
-h4 {
-  font-size: 1.05rem;
-}
-
-p {
-  color: var(--text-secondary);
 }
 
 .text-lead {
@@ -60,18 +45,26 @@ p {
   color: transparent;
 }
 
-.code,
-code,
-kbd {
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xs);
-  background: var(--bg-inset);
-  color: var(--accent-100);
-  font-family: var(--font-mono);
-  font-size: 0.88em;
+p {
+  color: var(--text-secondary);
 }
 
-code,
-kbd {
+.code,
+code {
+  background: var(--bg-inset);
+  color: var(--accent-100);
+  font-size: 0.9em;
+}
+
+code {
   padding: 0.1rem 0.3rem;
+}
+
+pre {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Fira Code', Consolas, Monaco, monospace;
 }
