@@ -30,7 +30,7 @@
 
     <main class="main-content">
       <section class="docs-main stack-lg" id="docs-content" aria-live="polite">
-        <div class="docs-loader">Loading Getting Started...</div>
+        <div class="docs-loader">Loading ...</div>
       </section>
     </main>
 
@@ -40,7 +40,7 @@
       const content = document.querySelector("#docs-content");
       const navButtons = [...document.querySelectorAll("[data-page]")];
       const pageCache = new Map();
-      const defaultPage = "getting-started";
+      const defaultPage = "overview";
 
       function setActiveButton(page) {
         navButtons.forEach((button) => {
