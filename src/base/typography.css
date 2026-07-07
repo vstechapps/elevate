@@ -10,9 +10,7 @@ h6 {
   line-height: var(--leading-tight);
 }
 
-h1,
-.text-display {
-  max-width: 13ch;
+h1{
   font-size: clamp(2.5rem, 4rem, 4.5rem);
   letter-spacing: 0;
 }
@@ -36,7 +34,6 @@ p {
 }
 
 .text-lead {
-  max-width: 68ch;
   color: var(--text-secondary);
   font-size: 1.125rem;
   line-height: var(--leading-loose);
@@ -45,13 +42,14 @@ p {
 .text-small {
   color: var(--text-muted);
   font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 .text-caption {
   color: var(--text-muted);
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 

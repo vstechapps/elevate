@@ -8,19 +8,12 @@
   gap: var(--space-xl);
 }
 
-
-.brand-mark {
-  display: none;
-}
-
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-sm);
   color: var(--text-muted);
-  font-size: 0.875rem;
-  font-weight: 700;
 }
 
 .breadcrumb a {
@@ -30,6 +23,7 @@
 
 .breadcrumb a:hover {
   color: var(--text-primary);
+  text-decoration: underline;
 }
 
 .breadcrumb-separator {
@@ -48,16 +42,20 @@
 
 .nav-link {
   color: var(--text-secondary);
-  font-size: 0.95rem;
   font-weight: 500;
-  line-height: 1.2;
+  cursor: pointer;
   padding: 0;
   transition: color var(--duration-fast) var(--ease-standard);
 }
 
-.nav-link:hover,
-.nav-link.is-active {
+.nav-link:hover {
   color: var(--text-primary);
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .nav-actions {
@@ -100,7 +98,7 @@
 }
 
 .side-nav a:hover,
-.side-nav a.is-active {
+.side-nav a.active {
   background: var(--bg-soft);
   color: var(--text-primary);
 }

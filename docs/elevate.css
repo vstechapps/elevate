@@ -217,9 +217,7 @@ h6 {
   line-height: var(--leading-tight);
 }
 
-h1,
-.text-display {
-  max-width: 13ch;
+h1{
   font-size: clamp(2.5rem, 4rem, 4.5rem);
   letter-spacing: 0;
 }
@@ -243,7 +241,6 @@ p {
 }
 
 .text-lead {
-  max-width: 68ch;
   color: var(--text-secondary);
   font-size: 1.125rem;
   line-height: var(--leading-loose);
@@ -252,13 +249,14 @@ p {
 .text-small {
   color: var(--text-muted);
   font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 .text-caption {
   color: var(--text-muted);
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -404,17 +402,6 @@ kbd {
   gap: var(--space-sm);
   padding-left: 1.1rem;
   color: var(--text-secondary);
-}
-
-.example-code code {
-  display: block;
-  border: 0;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  line-height: 1.65;
-  padding: 0;
-  white-space: pre;
 }
 
 @media (max-width: 860px) {
@@ -1124,19 +1111,12 @@ kbd {
   gap: var(--space-xl);
 }
 
-
-.brand-mark {
-  display: none;
-}
-
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-sm);
   color: var(--text-muted);
-  font-size: 0.875rem;
-  font-weight: 700;
 }
 
 .breadcrumb a {
@@ -1146,6 +1126,7 @@ kbd {
 
 .breadcrumb a:hover {
   color: var(--text-primary);
+  text-decoration: underline;
 }
 
 .breadcrumb-separator {
@@ -1164,16 +1145,19 @@ kbd {
 
 .nav-link {
   color: var(--text-secondary);
-  font-size: 0.95rem;
   font-weight: 500;
-  line-height: 1.2;
+  cursor: pointer;
   padding: 0;
   transition: color var(--duration-fast) var(--ease-standard);
 }
 
-.nav-link:hover,
-.nav-link.is-active {
+.nav-link:hover {
   color: var(--text-primary);
+  text-decoration: underline;
+}
+.nav-link.active {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .nav-actions {

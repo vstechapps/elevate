@@ -15,11 +15,11 @@
     </header>
     <div class="sidenav">
       <button class="expand-btn" type="button">&laquo;</button>
-      <button class="link active" type="button" data-page="getting-started">Getting Started</button>
+      <button class="link active" type="button" data-page="overview">Overview</button>
+      <button class="link" type="button" data-page="typography">Typography</button>
+      <button class="link" type="button" data-page="navigation">Navigation</button>
       <button class="link" type="button" data-page="buttons">Buttons</button>
       <button class="link" type="button" data-page="cards">Cards</button>
-      <button class="link" type="button" data-page="breadcrumb">BreadCrumb</button>
-      <button class="link" type="button" data-page="navigation">Navigation</button>
       <button class="link" type="button" data-page="forms">Forms</button>
       <button class="link" type="button" data-page="badge">Badge</button>
       <button class="link" type="button" data-page="learning-path">Learning Path</button>
@@ -34,47 +34,71 @@
       </section>
     </main>
 
-    <script>
+    <script type="module">
+      import { getPageFromUrl, setPageInUrl } from "./page-state.js";
+
       const content = document.querySelector("#docs-content");
       const navButtons = [...document.querySelectorAll("[data-page]")];
       const pageCache = new Map();
+      const defaultPage = "getting-started";
 
-      async function loadPage(page) {
+      function setActiveButton(page) {
+        navButtons.forEach((button) => {
+          const isActive = button.dataset.page === page;
+          button.classList.toggle("active", isActive);
+          button.classList.toggle("is-active", isActive);
+        });
+      }
+
+      async function loadPage(page, shouldUpdateUrl = true) {
+        const resolvedPage = page || defaultPage;
         content.innerHTML = '<div class="docs-loader">Loading...</div>';
+        setActiveButton(resolvedPage);
 
         try {
-          if (!pageCache.has(page)) {
-            const response = await fetch(`./pages/${page}.html`, { cache: "no-store" });
+          if (!pageCache.has(resolvedPage)) {
+            const response = await fetch(`./pages/${resolvedPage}.html`, { cache: "no-store" });
 
             if (!response.ok) {
-              throw new Error(`Missing docs page: ${page}`);
+              throw new Error(`Missing docs page: ${resolvedPage}`);
             }
 
-            pageCache.set(page, await response.text());
+            pageCache.set(resolvedPage, await response.text());
           }
 
-          content.innerHTML = pageCache.get(page);
-          content.scrollIntoView({ block: "start" });
+          content.innerHTML = pageCache.get(resolvedPage);
+
+          if (shouldUpdateUrl) {
+            setPageInUrl(resolvedPage);
+          }
         } catch (error) {
           content.innerHTML = `
-            <header class="docs-header">
-              <span class="docs-kicker">Load error</span>
-              <h1>Page unavailable</h1>
-              <p class="text-lead">The docs shell could not load this section. Serve the repository with <code>npm run dev</code> or publish it with GitHub Pages so component pages can be fetched.</p>
-            </header>
+            <nav class="breadcrumb text-title" aria-label="Breadcrumb">
+              <a href="?page=overview">Elevate </a>
+            </nav>
+            <p class="text-lead">Page ${page} unavailable. Go back to the <a class="nav-link" href="?page=overview">Home</a>.</p>
           `;
         }
       }
 
       navButtons.forEach((button) => {
         button.addEventListener("click", () => {
-          navButtons.forEach((item) => item.classList.remove("is-active"));
-          button.classList.add("is-active");
           loadPage(button.dataset.page);
         });
       });
 
-      loadPage("getting-started");
+      window.addEventListener("popstate", () => {
+        loadPage(getPageFromUrl(window.location.search, defaultPage), false);
+      });
+
+      const initialPage = getPageFromUrl(window.location.search, defaultPage);
+      const hasPageParam = new URLSearchParams(window.location.search).has("page");
+
+      if (!hasPageParam) {
+        setPageInUrl(initialPage, "replaceState");
+      }
+
+      loadPage(initialPage, false);
     </script>
   </body>
 </html>

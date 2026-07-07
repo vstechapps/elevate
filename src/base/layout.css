@@ -117,17 +117,6 @@
   color: var(--text-secondary);
 }
 
-.example-code code {
-  display: block;
-  border: 0;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  line-height: 1.65;
-  padding: 0;
-  white-space: pre;
-}
-
 @media (max-width: 860px) {
   .split,
   .grid-2,

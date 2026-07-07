@@ -1,42 +1,134 @@
-<header class="docs-header">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <span>Basic Components</span>
-    <span class="breadcrumb-separator">/</span>
-    <span aria-current="page">Navigation</span>
-  </nav>
-  <span class="docs-kicker">App chrome</span>
-  <h1>Navigation</h1>
-  <p class="text-lead">Use navigation primitives for product headers, section tabs, and learner workspace movement.</p>
-</header>
+<nav class="breadcrumb text-title" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Navigation</span>
+</nav>
 
-<article class="example-card">
-  <div class="example-header">
-    <span class="example-title">Header navigation</span>
-    <span class="badge badge-primary">Preview</span>
+<p class="text-lead">
+  Navigation primitives help structure product headers, section switching, and user workspace movement.
+</p>
+
+<article class="card card-interactive">
+  <div class="card-header">
+    <h3>Links & Actions</h3>
   </div>
-  <div class="example-preview">
-    <div class="showcase-panel p-lg">
-      <div class="nav-inner">
-        <a class="brand" href="#"><span>Elevate</span></a>
-        <div class="nav-links">
-          <a class="nav-link is-active" href="#">Dashboard</a>
-          <a class="nav-link" href="#">Paths</a>
-          <a class="nav-link" href="#">Leaderboard</a>
-        </div>
-        <div class="nav-actions">
-          <button class="btn btn-subtle">Resume</button>
-          <button class="btn btn-primary">Upgrade</button>
-        </div>
+  <div class="card-body text-lead">
+    <nav class="nav" aria-label="Navigation">
+      <div class="nav-links">
+        <span class="nav-link active">Dashboard</span>
+        <span class="nav-link">Courses</span>
+        <span class="nav-link">Analytics</span>
       </div>
-    </div>
+
+      <div class="nav-actions">
+        <button class="btn btn-subtle">Sign In</button>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+    </nav>
   </div>
-  <div class="example-code">
-    <pre><code>&lt;div class="nav-inner"&gt;
-  &lt;a class="brand" href="#"&gt;Elevate&lt;/a&gt;
-  &lt;div class="nav-links"&gt;
-    &lt;a class="nav-link is-active" href="#"&gt;Dashboard&lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div class="nav-actions"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+</article>
+
+<article class="card card-interactive">
+  <div class="card-header">
+    <h3>Breadcrumb</h3>
+  </div>
+  <div class="card-body text-lead">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="#">Fullstack Pro</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="#">Backend</a>
+      <span class="breadcrumb-separator">/</span>
+      <span aria-current="page">Authentication API</span>
+    </nav>
+  </div>
+</article>
+
+<article class="card card-interactive">
+  <div class="card-header">
+    <h3>Side Navigation</h3>
+  </div>
+
+  <div class="card-body">
+
+    <nav class="side-nav">
+      <a href="#" class="is-active">Getting Started</a>
+      <a href="#">Typography</a>
+      <a href="#">Navigation</a>
+      <a href="#">Buttons</a>
+      <a href="#">Cards</a>
+      <a href="#">Forms</a>
+    </nav>
+
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-header">
+    <h3>Navigation Reference (AI Friendly)</h3>
+  </div>
+
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td><code>.nav</code></td>
+          <td>Root container for navigation groups</td>
+        </tr>
+
+        <tr>
+          <td><code>.nav-links</code></td>
+          <td>Groups multiple navigation items horizontally</td>
+        </tr>
+
+        <tr>
+          <td><code>.nav-link</code></td>
+          <td>Individual navigation item</td>
+        </tr>
+
+        <tr>
+          <td><code>.nav-link.active</code></td>
+          <td>Highlights the currently active page or section</td>
+        </tr>
+
+        <tr>
+          <td><code>.nav-actions</code></td>
+          <td>Container for navigation buttons and actions</td>
+        </tr>
+
+        <tr>
+          <td><code>.breadcrumb</code></td>
+          <td>Displays hierarchical page location</td>
+        </tr>
+
+        <tr>
+          <td><code>.breadcrumb-separator</code></td>
+          <td>Visual separator between breadcrumb items</td>
+        </tr>
+
+        <tr>
+          <td><code>.side-nav</code></td>
+          <td>Vertical navigation menu for sidebars</td>
+        </tr>
+        
+        <tr>
+          <td><code>.side-nav a</code></td>
+          <td>Individual side navigation item</td>
+        </tr>
+        
+        <tr>
+          <td><code>.side-nav a.active</code></td>
+          <td>Highlights the active sidebar item</td>
+        </tr>
+
+      </tbody>
+    </table>
   </div>
 </article>
