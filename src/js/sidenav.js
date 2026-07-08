@@ -33,6 +33,7 @@ export function toggle() {
   sideNav.classList.toggle('collapsed');
   mainContent.classList.toggle('collapsed');
   if(expandBtn) {
-    expandBtn.innerHTML = expandBtn.innerHTML === '&laquo;' ? '&raquo;' : '&laquo;';
+    console.log(expandBtn.innerHTML);
+    expandBtn.innerHTML = expandBtn.innerHTML === '«' ? '&raquo;' : '&laquo;';
   }
 }
