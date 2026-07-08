@@ -51,7 +51,6 @@ p {
 
 .code,
 code {
-  background: var(--bg-inset);
   color: var(--accent-100);
   font-size: 0.9em;
 }

@@ -258,7 +258,6 @@ p {
 
 .code,
 code {
-  background: var(--bg-inset);
   color: var(--accent-100);
   font-size: 0.9em;
 }
@@ -701,11 +700,11 @@ pre {
   border-color: rgba(44, 195, 107, 0.5);
 }
 
-.quest-card {
+.card-quest {
   position: relative;
 }
 
-.quest-card::before {
+.card-quest::before {
   position: absolute;
   inset: 0 auto 0 0;
   width: 3px;

@@ -1,16 +1,15 @@
-<header class="docs-header">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <span>Basic Components</span>
-    <span class="breadcrumb-separator">/</span>
-    <span aria-current="page">Cards</span>
-  </nav>
-  <span class="docs-kicker">Surfaces</span>
-  <h1>Cards</h1>
-  <p class="text-lead">Cards group lesson state, quest details, stats, and compact dashboard information.</p>
-</header>
+<nav class="breadcrumb text-title" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Cards</span>
+</nav>
+
+<p class="text-lead">
+  Cards are used to display related information in a structured format.
+</p>
 
 <div class="grid grid-2">
-  <article class="card card-interactive">
+  <div class="card card-interactive">
     <div class="card-header">
       <span class="badge badge-success">Unlocked</span>
       <span class="text-small">24 min</span>
@@ -23,27 +22,63 @@
       <span class="badge badge-gold">+220 XP</span>
       <button class="btn btn-primary btn-sm">Continue</button>
     </div>
-  </article>
+  </div>
 
-  <article class="card quest-card">
+  <div class="card card-quest">
     <div class="card-body">
       <span class="badge badge-xp">Quest</span>
       <h3>Deployment checkpoint</h3>
       <p>Ship the backend to production and verify health checks.</p>
     </div>
-  </article>
+  </div>
 </div>
 
-<article class="example-card">
-  <div class="example-header">
-    <span class="example-title">Card anatomy</span>
-    <span class="badge badge-primary">Markup</span>
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Card Anatomy</h3>
+    </div>
+    <div class="card-body">
+      <table class="table" disabled rows="4">
+        <tr>
+          <td><strong>Card</strong></td>
+          <td>The container that holds the header, body, and footer.</td>
+        </tr>
+        <tr>
+          <td><strong>Header</strong></td>
+          <td>Contains headings, badges, labels, or other metadata.</td>
+        </tr>
+        <tr>
+          <td><strong>Body</strong></td>
+          <td>Contains the main content and description.</td>
+        </tr>
+        <tr>
+          <td><strong>Footer</strong></td>
+          <td>Contains actions, such as buttons or links.</td>
+        </tr>
+      </table>
+      </div>
+    </div>
   </div>
-  <div class="example-code">
-    <pre><code>&lt;article class="card card-interactive"&gt;
-  &lt;div class="card-header"&gt;...&lt;/div&gt;
-  &lt;div class="card-body"&gt;...&lt;/div&gt;
-  &lt;div class="card-footer"&gt;...&lt;/div&gt;
-&lt;/article&gt;</code></pre>
+</article>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3> Card Reference </h3>
+    </div>
+    <div class="card-body">
+      <div>
+        <pre><code>&lt;div class="card card-interactive"&gt;
+            &lt;div class="card-header"&gt;...&lt;/div&gt;
+            &lt;div class="card-body"&gt;...&lt;/div&gt;
+            &lt;div class="card-footer"&gt;...&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+      </div>
+      <div>
+        <pre><code>&lt;div class="card card-quest"&gt;
+            &lt;div class="card-body"&gt;...&lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+    </div>
   </div>
 </article>

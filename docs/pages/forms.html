@@ -1,21 +1,20 @@
-<header class="docs-header">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <span>Basic Components</span>
-    <span class="breadcrumb-separator">/</span>
-    <span aria-current="page">Forms</span>
-  </nav>
-  <span class="docs-kicker">Inputs</span>
-  <h1>Forms</h1>
-  <p class="text-lead">Form controls support onboarding, lab submissions, course filters, and feedback flows.</p>
-</header>
+<nav class="breadcrumb text-title" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Forms </span>
+</nav>
 
-<article class="example-card">
-  <div class="example-header">
-    <span class="example-title">Learning profile form</span>
-    <span class="badge badge-primary">Fields</span>
-  </div>
-  <div class="example-preview">
-    <form class="stack">
+<p class="text-lead">
+  Form controls support onboarding, lab submissions, course filters, and feedback flows.
+</p>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+     <h3>Form Fields</h3>
+    </div>
+    <div class="card-body">
+      <form class="stack">
       <div class="field">
         <label for="track">Track</label>
         <select class="select" id="track">
@@ -34,12 +33,23 @@
         <span>Send progress reminders</span>
       </label>
     </form>
+    </div>
   </div>
-  <div class="example-code">
-    <pre><code>&lt;div class="field"&gt;
+</article>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3> Form Reference </h3>
+    </div>
+    <div class="card-body">
+      <div>
+        <pre><code>&lt;div class="field"&gt;
   &lt;label for="goal"&gt;Weekly goal&lt;/label&gt;
   &lt;input class="input" id="goal" placeholder="Ship two labs"&gt;
   &lt;span class="field-hint"&gt;Keep goals specific.&lt;/span&gt;
 &lt;/div&gt;</code></pre>
+      </div>
+    </div>
   </div>
 </article>
