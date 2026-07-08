@@ -1,36 +1,64 @@
-<header class="docs-header">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <span>Advanced Comps</span>
-    <span class="breadcrumb-separator">/</span>
-    <span aria-current="page">Mastery Ring</span>
-  </nav>
-  <span class="docs-kicker">Skill mastery</span>
-  <h1>Mastery Ring</h1>
-  <p class="text-lead">Mastery rings use a CSS custom property to show skill confidence, assessment strength, or course completion.</p>
-</header>
+<nav class="breadcrumb text-subtitle" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Mastery Ring</span>
+</nav>
 
-<article class="example-card">
-  <div class="example-header">
-    <span class="example-title">Skill rings</span>
-    <span class="badge badge-xp">Mastery</span>
-  </div>
-  <div class="example-preview">
-    <div class="cluster">
-      <div class="stack center">
-        <div class="skill-ring" style="--ring-value: 42%;">42%</div>
-        <span class="text-small">React</span>
-      </div>
-      <div class="stack center">
-        <div class="skill-ring" style="--ring-value: 68%;">68%</div>
-        <span class="text-small">Node.js</span>
-      </div>
-      <div class="stack center">
-        <div class="skill-ring" style="--ring-value: 91%;">91%</div>
-        <span class="text-small">APIs</span>
+<p class="text-lead">
+  Mastery rings visualize skill confidence, assessment strength, and learning progression.
+</p>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Skill Mastery</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="cluster">
+
+        <div class="stack center">
+          <div class="skill-ring" style="--ring-value:42%">42%</div>
+          <span class="text-small">React</span>
+        </div>
+
+        <div class="stack center">
+          <div class="skill-ring" style="--ring-value:68%">68%</div>
+          <span class="text-small">Node.js</span>
+        </div>
+
+        <div class="stack center">
+          <div class="skill-ring" style="--ring-value:91%">91%</div>
+          <span class="text-small">APIs</span>
+        </div>
+
       </div>
     </div>
   </div>
-  <div class="example-code">
-    <pre><code>&lt;div class="skill-ring" style="--ring-value: 91%;"&gt;91%&lt;/div&gt;</code></pre>
+</article>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Mastery Ring Reference (AI Friendly)</h3>
+    </div>
+
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr><td><code>.skill-ring</code></td><td>Circular mastery indicator</td></tr>
+          <tr><td><code>--ring-value</code></td><td>Controls completion percentage</td></tr>
+          <tr><td><code>.cluster</code></td><td>Groups multiple rings</td></tr>
+          <tr><td><code>.center</code></td><td>Centers ring content</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </article>

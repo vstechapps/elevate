@@ -1,45 +1,66 @@
-<header class="docs-header">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <span>Advanced Comps</span>
-    <span class="breadcrumb-separator">/</span>
-    <span aria-current="page">Leaderboard</span>
-  </nav>
-  <span class="docs-kicker">Rankings</span>
-  <h1>Leaderboard</h1>
-  <p class="text-lead">Leaderboard tables highlight learner rank, XP, streaks, and mastery without turning the dashboard into a toy.</p>
-</header>
+<nav class="breadcrumb text-subtitle" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Leaderboard</span>
+</nav>
 
-<article class="example-card">
-  <div class="example-header">
-    <span class="example-title">Weekly leaderboard</span>
-    <span class="badge badge-gold">Top learners</span>
+<p class="text-lead">
+  Leaderboards highlight learner rankings, XP achievements, and engagement metrics.
+</p>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Weekly Leaderboard</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Learner</th>
+              <th>Track</th>
+              <th>XP</th>
+              <th>Streak</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr><td class="rank">1</td><td>Aarav</td><td>Backend APIs</td><td>8,420</td><td>18 Days</td></tr>
+            <tr><td class="rank">2</td><td>Mira</td><td>Fullstack JS</td><td>7,960</td><td>14 Days</td></tr>
+            <tr><td class="rank">3</td><td>Dev</td><td>Frontend Systems</td><td>7,210</td><td>11 Days</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-  <div class="example-preview">
-    <div class="table-wrap">
-      <table class="table docs-class-table">
+</article>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Leaderboard Reference (AI Friendly)</h3>
+    </div>
+
+    <div class="card-body">
+      <table class="table">
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Learner</th>
-            <th>Track</th>
-            <th>XP</th>
-            <th>Streak</th>
+            <th>Class</th>
+            <th>Purpose</th>
           </tr>
         </thead>
+
         <tbody>
-          <tr><td class="rank">1</td><td>Aarav</td><td>Backend APIs</td><td>8,420</td><td>18 days</td></tr>
-          <tr><td class="rank">2</td><td>Mira</td><td>Fullstack JS</td><td>7,960</td><td>14 days</td></tr>
-          <tr><td class="rank">3</td><td>Dev</td><td>Frontend Systems</td><td>7,210</td><td>11 days</td></tr>
+          <tr><td><code>.table-wrap</code></td><td>Responsive table container</td></tr>
+          <tr><td><code>.table</code></td><td>Leaderboard layout</td></tr>
+          <tr><td><code>.rank</code></td><td>Highlights ranking position</td></tr>
+          <tr><td><code>.badge</code></td><td>Displays achievements and streaks</td></tr>
+          <tr><td><code>.badge-gold</code></td><td>Highlights top performers</td></tr>
         </tbody>
       </table>
     </div>
-  </div>
-  <div class="example-code">
-    <pre><code>&lt;div class="table-wrap"&gt;
-  &lt;table class="table"&gt;
-    &lt;thead&gt;...&lt;/thead&gt;
-    &lt;tbody&gt;...&lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/div&gt;</code></pre>
   </div>
 </article>

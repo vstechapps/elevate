@@ -1,39 +1,78 @@
-<header class="docs-header">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <span>Advanced Comps</span>
-    <span class="breadcrumb-separator">/</span>
-    <span aria-current="page">Progress Bar</span>
-  </nav>
-  <span class="docs-kicker">Completion</span>
-  <h1>Progress Bar</h1>
-  <p class="text-lead">Progress bars show course completion, XP growth, and streak momentum.</p>
-</header>
+<nav class="breadcrumb text-subtitle" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Progress Bar</span>
+</nav>
 
-<article class="example-card">
-  <div class="example-header">
-    <span class="example-title">Progress states</span>
-    <span class="badge badge-primary">Meters</span>
-  </div>
-  <div class="example-preview">
-    <div class="stack-lg">
+<p class="text-lead">
+  Progress bars visualize completion, XP growth, streak momentum, and task advancement.
+</p>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Progress States</h3>
+    </div>
+
+    <div class="card-body stack-lg">
+
       <div class="xp-meter">
-        <div class="progress-meta"><span>API Design Quest</span><span>78%</span></div>
-        <div class="progress"><div class="progress-bar" style="width: 78%;"></div></div>
+        <div class="progress-meta">
+          <span>API Design Quest</span>
+          <span>78%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" style="width:78%"></div>
+        </div>
       </div>
+
       <div class="xp-meter">
-        <div class="progress-meta"><span>Level XP</span><span>46%</span></div>
-        <div class="progress"><div class="progress-bar progress-bar-xp" style="width: 46%;"></div></div>
+        <div class="progress-meta">
+          <span>Level XP</span>
+          <span>46%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-xp" style="width:46%"></div>
+        </div>
       </div>
+
       <div class="xp-meter">
-        <div class="progress-meta"><span>Streak goal</span><span>90%</span></div>
-        <div class="progress"><div class="progress-bar progress-bar-streak" style="width: 90%;"></div></div>
+        <div class="progress-meta">
+          <span>Streak Goal</span>
+          <span>90%</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-streak" style="width:90%"></div>
+        </div>
       </div>
+
     </div>
   </div>
-  <div class="example-code">
-    <pre><code>&lt;div class="xp-meter"&gt;
-  &lt;div class="progress-meta"&gt;&lt;span&gt;API Design Quest&lt;/span&gt;&lt;span&gt;78%&lt;/span&gt;&lt;/div&gt;
-  &lt;div class="progress"&gt;&lt;div class="progress-bar" style="width: 78%;"&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+</article>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Progress Bar Reference (AI Friendly)</h3>
+    </div>
+
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>.xp-meter</code></td><td>Groups labels and progress bar</td></tr>
+          <tr><td><code>.progress-meta</code></td><td>Displays title and percentage</td></tr>
+          <tr><td><code>.progress</code></td><td>Progress track container</td></tr>
+          <tr><td><code>.progress-bar</code></td><td>Default progress indicator</td></tr>
+          <tr><td><code>.progress-bar-xp</code></td><td>XP themed progress bar</td></tr>
+          <tr><td><code>.progress-bar-streak</code></td><td>Streak themed progress bar</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </article>

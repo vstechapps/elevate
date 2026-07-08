@@ -1,0 +1,77 @@
+<nav class="breadcrumb text-subtitle" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Full Reference</span>
+</nav>
+
+<p class="text-lead">
+  This page consolidates the core classes, layout primitives, and component patterns available in Elevate Theme for fast reference during implementation.
+</p>
+
+<article class="card card-interactive">
+  <div class="card-header">
+    <h3>Theme reference</h3>
+  </div>
+  <div class="card-body">
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Class / Pattern</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Typography</td><td><code>h1</code> – <code>h6</code></td><td>Headline hierarchy with strong, polished sizing and spacing.</td></tr>
+          <tr><td>Typography</td><td><code>.text-title</code></td><td>Large display text for section headings and prominent labels.</td></tr>
+          <tr><td>Typography</td><td><code>.text-subtitle</code></td><td>Medium-sized supporting title for section intros.</td></tr>
+          <tr><td>Typography</td><td><code>.text-lead</code></td><td>Introductory paragraph styling for key copy.</td></tr>
+          <tr><td>Typography</td><td><code>.text-small</code></td><td>Compact supporting text for metadata and helper copy.</td></tr>
+          <tr><td>Typography</td><td><code>.text-caption</code></td><td>Uppercase emphasis text for labels, legend, and tags.</td></tr>
+          <tr><td>Typography</td><td><code>.text-gradient</code></td><td>Gradient text treatment for hero and feature highlights.</td></tr>
+          <tr><td>Layout</td><td><code>.container</code>, <code>.container-md</code>, <code>.container-sm</code></td><td>Centered content wrappers with responsive max-width controls.</td></tr>
+          <tr><td>Layout</td><td><code>.section</code>, <code>.section-compact</code></td><td>Vertical spacing helpers for page sections.</td></tr>
+          <tr><td>Layout</td><td><code>.stack</code>, <code>.stack-lg</code></td><td>Vertical spacing stacks for grouped content.</td></tr>
+          <tr><td>Layout</td><td><code>.cluster</code></td><td>Flexible inline grouping with wrap and spacing.</td></tr>
+          <tr><td>Layout</td><td><code>.split</code></td><td>Two-column content layout for media and text pairs.</td></tr>
+          <tr><td>Layout</td><td><code>.grid</code>, <code>.grid-2</code>, <code>.grid-3</code></td><td>Responsive card and content grids.</td></tr>
+          <tr><td>Layout</td><td><code>.app-shell</code>, <code>.hero</code>, <code>.hero-content</code></td><td>Page shell and hero section scaffolding.</td></tr>
+          <tr><td>Layout</td><td><code>.showcase-panel</code>, <code>.component-note</code></td><td>Elevated surfaces for examples and implementation notes.</td></tr>
+          <tr><td>Navigation</td><td><code>.breadcrumb</code></td><td>Wayfinding trail with separators and active-state styling.</td></tr>
+          <tr><td>Navigation</td><td><code>.nav</code>, <code>.nav-links</code>, <code>.nav-link</code>, <code>.nav-actions</code></td><td>Header and top-level navigation primitives.</td></tr>
+          <tr><td>Navigation</td><td><code>.side-nav</code></td><td>Vertical section navigation for dashboards and docs shells.</td></tr>
+          <tr><td>Buttons</td><td><code>.btn</code></td><td>Base button treatment with hover, active, and focus states.</td></tr>
+          <tr><td>Buttons</td><td><code>.btn-primary</code>, <code>.btn-success</code>, <code>.btn-ghost</code>, <code>.btn-subtle</code>, <code>.btn-danger</code></td><td>Visual variants for primary, success, subtle, ghost, and danger actions.</td></tr>
+          <tr><td>Buttons</td><td><code>.btn-sm</code>, <code>.btn-lg</code>, <code>.btn-icon</code></td><td>Size and icon button utility modifiers.</td></tr>
+          <tr><td>Buttons</td><td><code>.btn-group</code></td><td>Grouped button set with shared border treatment.</td></tr>
+          <tr><td>Cards</td><td><code>.card</code></td><td>Core elevated card surface with rounded corners and border.</td></tr>
+          <tr><td>Cards</td><td><code>.card-interactive</code></td><td>Hoverable card variation for interactive content blocks.</td></tr>
+          <tr><td>Cards</td><td><code>.card-header</code>, <code>.card-body</code>, <code>.card-footer</code></td><td>Flexible card section layout parts.</td></tr>
+          <tr><td>Cards</td><td><code>.lesson-card</code>, <code>.stat-card</code></td><td>Special card types for learning modules and metrics.</td></tr>
+          <tr><td>Cards</td><td><code>.path-node</code>, <code>.path-node.is-active</code>, <code>.path-node.is-complete</code></td><td>Learning-path nodes with progress and completion states.</td></tr>
+          <tr><td>Forms</td><td><code>.field</code>, <code>.form-label</code></td><td>Consistent field spacing and label styling.</td></tr>
+          <tr><td>Forms</td><td><code>.input</code>, <code>.select</code>, <code>.textarea</code></td><td>Input controls with polished borders and focus treatment.</td></tr>
+          <tr><td>Forms</td><td><code>.field-hint</code>, <code>.field-error</code></td><td>Helper and validation messaging styles.</td></tr>
+          <tr><td>Forms</td><td><code>.check-row</code></td><td>Inline checkbox and switch companion layout.</td></tr>
+          <tr><td>Forms</td><td><code>.segmented</code>, <code>.segment</code>, <code>.segment.is-active</code></td><td>Compact segmented control styles for filters and toggles.</td></tr>
+          <tr><td>Badges</td><td><code>.badge</code></td><td>Compact status and metadata pill treatment.</td></tr>
+          <tr><td>Badges</td><td><code>.badge-primary</code>, <code>.badge-success</code>, <code>.badge-warning</code>, <code>.badge-danger</code>, <code>.badge-xp</code>, <code>.badge-gold</code></td><td>Colorful badge variants for categories, status, and achievements.</td></tr>
+          <tr><td>Badges</td><td><code>.level-pill</code>, <code>.level-dot</code></td><td>Level and milestone indicators for gamified experiences.</td></tr>
+          <tr><td>Gamification</td><td><code>.progress</code>, <code>.progress-bar</code></td><td>Horizontal progress indicators with themed fill states.</td></tr>
+          <tr><td>Gamification</td><td><code>.progress-bar-xp</code>, <code>.progress-bar-streak</code></td><td>Specialized progress fills for XP and streak visuals.</td></tr>
+          <tr><td>Gamification</td><td><code>.progress-meta</code>, <code>.xp-meter</code>, <code>.skill-ring</code></td><td>Progress detail layout and skill mastery ring.</td></tr>
+          <tr><td>Gamification</td><td><code>.path-line</code></td><td>Connector line used between learning-path steps.</td></tr>
+          <tr><td>Tables</td><td><code>.table-wrap</code>, <code>.table</code></td><td>Responsive table containers and data table styling.</td></tr>
+          <tr><td>Tables</td><td><code>.rank</code></td><td>Ranking emphasis styling for leaderboard rows.</td></tr>
+          <tr><td>Feedback</td><td><code>.alert</code>, <code>.alert-info</code>, <code>.alert-success</code>, <code>.alert-warning</code>, <code>.alert-danger</code></td><td>Inline feedback and status messaging blocks.</td></tr>
+          <tr><td>Feedback</td><td><code>.modal-backdrop</code>, <code>.modal</code>, <code>.modal-header</code>, <code>.modal-body</code>, <code>.modal-footer</code></td><td>Modal dialog shell and content structure.</td></tr>
+          <tr><td>Utilities</td><td><code>.sr-only</code></td><td>Visually hidden content for accessibility.</td></tr>
+          <tr><td>Utilities</td><td><code>.surface</code>, <code>.muted</code>, <code>.secondary</code>, <code>.success</code>, <code>.warning</code>, <code>.danger</code></td><td>Surface and semantic text color helpers.</td></tr>
+          <tr><td>Utilities</td><td><code>.center</code>, <code>.full-width</code></td><td>Simple alignment and width helpers.</td></tr>
+          <tr><td>Utilities</td><td><code>.mt-md</code>, <code>.mt-lg</code>, <code>.mb-md</code>, <code>.p-md</code>, <code>.p-lg</code></td><td>Spacing helpers for quick layout adjustments.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</article>

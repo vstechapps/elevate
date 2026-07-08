@@ -1,33 +1,71 @@
-<header class="docs-header">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <span>Advanced Comps</span>
-    <span class="breadcrumb-separator">/</span>
-    <span aria-current="page">Learning Path</span>
-  </nav>
-  <span class="docs-kicker">Progression</span>
-  <h1>Learning Path</h1>
-  <p class="text-lead">Path nodes visualize lesson sequence, completion state, and the current checkpoint.</p>
-</header>
+<nav class="breadcrumb text-subtitle" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Learning Path</span>
+</nav>
 
-<article class="example-card">
-  <div class="example-header">
-    <span class="example-title">Path sequence</span>
-    <span class="badge badge-xp">Journey</span>
-  </div>
-  <div class="example-preview">
-    <div class="path-line">
-      <span class="path-node is-complete">1</span>
-      <span class="path-node is-complete">2</span>
-      <span class="path-node is-active">3</span>
-      <span class="path-node">4</span>
-      <span class="path-node">5</span>
+<p class="text-lead">
+  Learning path components visualize user progression, completed milestones,
+  current checkpoints, and upcoming objectives.
+</p>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Learning Path</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="path-line">
+        <span class="path-node is-complete">1</span>
+        <span class="path-node is-complete">2</span>
+        <span class="path-node is-active">3</span>
+        <span class="path-node">4</span>
+        <span class="path-node">5</span>
+      </div>
     </div>
   </div>
-  <div class="example-code">
-    <pre><code>&lt;div class="path-line"&gt;
-  &lt;span class="path-node is-complete"&gt;1&lt;/span&gt;
-  &lt;span class="path-node is-active"&gt;3&lt;/span&gt;
-  &lt;span class="path-node"&gt;5&lt;/span&gt;
-&lt;/div&gt;</code></pre>
+</article>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Learning Path Reference (AI Friendly)</h3>
+    </div>
+
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><code>.path-line</code></td>
+            <td>Container that groups path nodes into a progression sequence</td>
+          </tr>
+
+          <tr>
+            <td><code>.path-node</code></td>
+            <td>Default path step representing an upcoming milestone</td>
+          </tr>
+
+          <tr>
+            <td><code>.path-node.is-active</code></td>
+            <td>Highlights the current learning checkpoint</td>
+          </tr>
+
+          <tr>
+            <td><code>.path-node.is-complete</code></td>
+            <td>Indicates a completed learning milestone</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
   </div>
 </article>

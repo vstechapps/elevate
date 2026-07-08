@@ -1,184 +1,76 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Elevate Gamification</title>
-    <link rel="stylesheet" href="../components/theme.css">
-  </head>
-  <body>
-    <nav class="nav">
-      <div class="container nav-inner">
-        <a class="brand" href="index.html"><span class="brand-mark">FS</span><span>Elevate</span></a>
+<nav class="breadcrumb text-subtitle" aria-label="Breadcrumb">
+  <a href="?page=overview">Elevate</a>
+  <span class="breadcrumb-separator">/</span>
+  <span aria-current="page">Gamification</span>
+</nav>
+
+<p class="text-lead">
+  Gamification components motivate learners through progression, mastery, rewards, and competition.
+</p>
+
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Gamification Overview</h3>
+    </div>
+
+    <div class="card-body grid grid-3">
+
+      <div class="stack center">
+        <div class="skill-ring" style="--ring-value:82%">82%</div>
+        <span>Mastery</span>
       </div>
-    </nav>
 
-    <main class="docs-shell">
-      <aside class="docs-sidebar">
-        <nav class="side-nav" aria-label="Component docs">
-          <a href="index.html">Overview</a>
-          <a href="buttons.html">Buttons</a>
-          <a href="cards.html">Cards</a>
-          <a href="forms.html">Forms</a>
-          <a href="badges.html">Badges</a>
-          <a class="is-active" href="gamification.html">Gamification</a>
-        </nav>
-      </aside>
+      <div class="stack">
+        <div class="path-line">
+          <span class="path-node is-complete">1</span>
+          <span class="path-node is-complete">2</span>
+          <span class="path-node is-active">3</span>
+          <span class="path-node">4</span>
+        </div>
+      </div>
 
-      <section class="docs-main stack-lg">
-        <header class="docs-header">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Elevate</a>
-            <span class="breadcrumb-separator">/</span>
-            <span>Patterns</span>
-            <span class="breadcrumb-separator">/</span>
-            <span aria-current="page">Gamification</span>
-          </nav>
-          <span class="docs-kicker">Pattern</span>
-          <h1>Gamification</h1>
-          <p class="text-lead">Subtle motivation systems for serious learners: visible progress, meaningful rewards, and challenge framing.</p>
-        </header>
+      <div class="stack">
+        <div class="xp-meter">
+          <div class="progress-meta">
+            <span>Course Progress</span>
+            <span>66%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" style="width:66%"></div>
+          </div>
+        </div>
+      </div>
 
-        <section class="component-note">
-          <h3>Usage</h3>
-          <p>Use gamification patterns to clarify momentum and mastery, not to overload the interface with decoration.</p>
-          <ul>
-            <li>Show current progress and next action together.</li>
-            <li>Use rings and paths for meaningful skill or module progression.</li>
-            <li>Use alerts for time-sensitive learning nudges and review reminders.</li>
-          </ul>
-        </section>
+    </div>
+  </div>
+</article>
 
-        <article class="example-card">
-          <div class="example-header">
-            <span class="example-title">Learning path</span>
-            <span class="badge badge-primary">Progression</span>
-          </div>
-          <div class="example-preview">
-            <div class="card">
-              <div class="card-header">
-                <h3>Learning path</h3>
-                <span class="badge badge-primary">Module 3</span>
-              </div>
-              <div class="card-body">
-                <div class="path-line">
-                  <span class="path-node is-complete">1</span>
-                  <span class="path-node is-complete">2</span>
-                  <span class="path-node is-active">3</span>
-                  <span class="path-node">4</span>
-                  <span class="path-node">5</span>
-                </div>
-                <div class="xp-meter">
-                  <div class="progress-meta"><span>Server architecture</span><span>66%</span></div>
-                  <div class="progress"><div class="progress-bar" style="width: 66%;"></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="example-code">
-            <pre><code>&lt;div class="path-line"&gt;
-  &lt;span class="path-node is-complete"&gt;1&lt;/span&gt;
-  &lt;span class="path-node is-complete"&gt;2&lt;/span&gt;
-  &lt;span class="path-node is-active"&gt;3&lt;/span&gt;
-  &lt;span class="path-node"&gt;4&lt;/span&gt;
-  &lt;span class="path-node"&gt;5&lt;/span&gt;
-&lt;/div&gt;
+<article>
+  <div class="card">
+    <div class="card-header">
+      <h3>Gamification Reference (AI Friendly)</h3>
+    </div>
 
-&lt;div class="progress"&gt;
-  &lt;div class="progress-bar" style="width: 66%;"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-          </div>
-        </article>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
 
-        <article class="example-card">
-          <div class="example-header">
-            <span class="example-title">Mastery and nudge</span>
-            <span class="badge badge-primary">Motivation</span>
-          </div>
-          <div class="example-preview">
-            <div class="grid grid-2">
-              <article class="card">
-                <div class="card-header">
-                  <h3>Mastery ring</h3>
-                  <span class="badge badge-success">On pace</span>
-                </div>
-                <div class="card-body">
-                  <div class="cluster" style="align-items: center;">
-                    <div class="skill-ring" style="--ring-value: 82%;">82%</div>
-                    <div class="stack">
-                      <h3>API Reliability</h3>
-                      <p>Retries, idempotency, observability, and failure-mode practice.</p>
-                      <span class="badge badge-xp">+340 XP until level 8</span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <div class="alert alert-warning">
-                <strong class="alert-title">Streak at risk</strong>
-                <p>One 15-minute review keeps the current streak alive.</p>
-              </div>
-            </div>
-          </div>
-          <div class="example-code">
-            <pre><code>&lt;div class="skill-ring" style="--ring-value: 82%;"&gt;82%&lt;/div&gt;
-
-&lt;div class="alert alert-warning"&gt;
-  &lt;strong class="alert-title"&gt;Streak at risk&lt;/strong&gt;
-  &lt;p&gt;One 15-minute review keeps the current streak alive.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-          </div>
-        </article>
-
-        <article class="example-card">
-          <div class="example-header">
-            <span class="example-title">Leaderboard table</span>
-            <span class="badge badge-primary">Competition</span>
-          </div>
-          <div class="example-preview">
-            <div class="table-wrap">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Rank</th>
-                    <th>Learner</th>
-                    <th>Track</th>
-                    <th>Streak</th>
-                    <th>XP</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="rank">1</td>
-                    <td>Arjun</td>
-                    <td>Fullstack TypeScript</td>
-                    <td><span class="badge badge-warning">32 days</span></td>
-                    <td>18,420</td>
-                  </tr>
-                  <tr>
-                    <td class="rank">2</td>
-                    <td>Maya</td>
-                    <td>Backend Engineering</td>
-                    <td><span class="badge badge-warning">27 days</span></td>
-                    <td>17,960</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="example-code">
-            <pre><code>&lt;div class="table-wrap"&gt;
-  &lt;table class="table"&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;&lt;th&gt;Rank&lt;/th&gt;&lt;th&gt;Learner&lt;/th&gt;&lt;th&gt;XP&lt;/th&gt;&lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;&lt;td class="rank"&gt;1&lt;/td&gt;&lt;td&gt;Arjun&lt;/td&gt;&lt;td&gt;18,420&lt;/td&gt;&lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/div&gt;</code></pre>
-          </div>
-        </article>
-      </section>
-    </main>
-  </body>
-</html>
+        <tbody>
+          <tr><td><code>.path-line</code></td><td>Learning progression sequence</td></tr>
+          <tr><td><code>.path-node</code></td><td>Learning milestone</td></tr>
+          <tr><td><code>.skill-ring</code></td><td>Mastery indicator</td></tr>
+          <tr><td><code>.progress</code></td><td>Completion tracking</td></tr>
+          <tr><td><code>.progress-bar</code></td><td>Progress visualization</td></tr>
+          <tr><td><code>.badge-xp</code></td><td>XP and reward indicators</td></tr>
+          <tr><td><code>.rank</code></td><td>Leaderboard rankings</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</article>

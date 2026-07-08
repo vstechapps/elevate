@@ -27,6 +27,7 @@
         <button class="link" type="button" data-page="progress-bar">Progress Bar</button>
         <button class="link" type="button" data-page="leaderboard">Leaderboard</button>
         <button class="link" type="button" data-page="mastery-ring">Mastery Ring</button>
+        <button class="link" type="button" data-page="full-reference">Full Reference</button>
       </div>  
     </div>
 
@@ -75,7 +76,7 @@
           }
         } catch (error) {
           content.innerHTML = `
-            <nav class="breadcrumb text-title" aria-label="Breadcrumb">
+            <nav class="breadcrumb text-subtitle" aria-label="Breadcrumb">
               <a href="?page=overview">Elevate </a>
             </nav>
             <p class="text-lead">Page ${page} unavailable. Go back to the <a class="nav-link" href="?page=overview">Home</a>.</p>
