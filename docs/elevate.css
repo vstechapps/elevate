@@ -339,6 +339,10 @@ pre {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .app-shell {
   min-height: 100vh;
 }
@@ -399,7 +403,8 @@ pre {
 @media (max-width: 860px) {
   .split,
   .grid-2,
-  .grid-3 {
+  .grid-3,
+  .grid-4 {
     grid-template-columns: 1fr;
   }
 
