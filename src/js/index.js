@@ -1,12 +1,13 @@
 import * as SidenavModule from './sidenav.js';
 import * as LoaderModule from './loader.js';
+import * as CryptoModule from './crypto.js';
 
 // 1. Initialise all scripts as soon as the DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   SidenavModule.init();
   LoaderModule.init(); // Injects the default loader HTML structure automatically
   
-  console.log('Sidenav and Loader initialized successfully!');
+  console.log('Sidenav, Loader, and Crypto initialized successfully!');
 });
 
 // 2. Expose the Sidenav API to the global window object for HTML access
@@ -20,4 +21,13 @@ window.Loader = {
   init: LoaderModule.init,
   show: LoaderModule.show,
   hide: LoaderModule.hide,
+};
+
+// 4. Expose the Crypto API to the global window object for HTML access
+window.Crypto = {
+  init: CryptoModule.init,
+  encrypt: CryptoModule.encrypt,
+  decrypt: CryptoModule.decrypt,
+  encjson: CryptoModule.encjson,
+  decjson: CryptoModule.decjson,
 };
