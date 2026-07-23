@@ -1,4 +1,4 @@
-const DEFAULT_SECRET = 'etavele';
+const DEFAULT_SECRET = 'elevate';
 let activeSecret = DEFAULT_SECRET;
 
 function encodeText(value) {
