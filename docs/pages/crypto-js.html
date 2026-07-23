@@ -5,168 +5,65 @@
 </nav>
 
 <p class="text-lead">
-  Encrypt and decrypt values or JSON payloads with the built-in AES-GCM helper.
+  A simple client-side encryption helper for protecting text and JSON data with a shared secret.
 </p>
 
-<form class="stack-lg" data-crypto-demo>
+<article class="stack-lg" data-crypto-demo>
   <div class="card">
     <div class="card-header">
-      <h3>Shared secret</h3>
+      <h3>Crypto Utility</h3>
     </div>
     <div class="card-body stack">
-      <label class="form-group">
-        <span class="text-label">Secret</span>
-        <input class="input" type="text" data-crypto-secret value="elevate" />
-      </label>
-    </div>
-  </div>
-
-  <div class="grid grid-2">
-    <div class="card">
-      <div class="card-header">
-        <h3>Encrypt value</h3>
+      <div class="grid grid-3">
+        <div class="field">
+            <span class="text-label">Secret</span>
+            <input class="input" type="text" data-crypto-secret value="elevate" />
+        </div>
+        <div class="field">
+             <span class="text-label">Function</span>
+            <select class="input" data-crypto-function>
+                <option value="encrypt" default>ENCRYPT</option>
+                <option value="decrypt">DECRYPT</option>
+            </select>
+        </div>
+        <div class="field">
+            <span class="text-label">Data</span>
+            <select class="input" data-crypto-data-type>
+                <option value="json" default>JSON</option>
+                <option value="text">TEXT</option>
+            </select>
+        </div>
       </div>
-      <div class="card-body stack">
+      <div class="grid grid-2">
         <label class="form-group">
-          <span class="text-label">Plain text</span>
-          <input class="input" type="text" data-crypto-input value="hello world" />
+        <span class="text-label" data-crypto-input-label>Input</span>
+        <textarea class="input" rows="8" data-crypto-input>{"name":"Ada","role":"Developer","active":true}</textarea>
         </label>
-        <button class="btn btn-primary" type="submit" data-crypto-action="encrypt-value">Encrypt</button>
         <label class="form-group">
-          <span class="text-label">Encrypted value</span>
-          <textarea class="input" rows="4" data-crypto-output></textarea>
-        </label>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <h3>Decrypt value</h3>
-      </div>
-      <div class="card-body stack">
-        <label class="form-group">
-          <span class="text-label">Encrypted text</span>
-          <textarea class="input" rows="4" data-crypto-decrypt-input></textarea>
-        </label>
-        <button class="btn btn-secondary" type="submit" data-crypto-action="decrypt-value">Decrypt</button>
-        <label class="form-group">
-          <span class="text-label">Decrypted value</span>
-          <textarea class="input" rows="4" data-crypto-decrypt-output></textarea>
+            <span class="text-label" data-crypto-output-label>Output</span>
+            <textarea class="input" rows="8" data-crypto-output></textarea>
         </label>
       </div>
     </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <h3>Encrypt JSON</h3>
-    </div>
-    <div class="card-body stack">
-      <label class="form-group">
-        <span class="text-label">JSON input</span>
-        <textarea class="input" rows="8" data-crypto-json-input>{"name":"Ada","role":"Developer","active":true}</textarea>
-      </label>
-      <button class="btn btn-accent" type="submit" data-crypto-action="encrypt-json">Encrypt JSON</button>
-      <label class="form-group">
-        <span class="text-label">Encrypted JSON</span>
-        <textarea class="input" rows="8" data-crypto-json-output></textarea>
-      </label>
+    <div class="card-footer">
+        <button class="btn btn-primary" onclick="run()" type="button">RUN</button>
     </div>
   </div>
+</article>
 
-  <div class="card">
-    <div class="card-header">
-      <h3>Decrypt JSON</h3>
-    </div>
-    <div class="card-body stack">
-      <label class="form-group">
-        <span class="text-label">Encrypted JSON</span>
-        <textarea class="input" rows="8" data-crypto-json-decrypt-input></textarea>
-      </label>
-      <button class="btn btn-outline" type="submit" data-crypto-action="decrypt-json">Decrypt JSON</button>
-      <label class="form-group">
-        <span class="text-label">Decrypted JSON</span>
-        <textarea class="input" rows="8" data-crypto-json-decrypt-output></textarea>
-      </label>
-    </div>
+<article class="card">
+  <div class="card-header">
+    <h3>Client-side usage</h3>
   </div>
-</form>
+  <div class="card-body stack">
+    <p class="text-subtitle">Use the bundled helper from the browser after the script is loaded.</p>
+    <pre><code>const secret = "my-secret";
 
-<script>
+const encrypted = await window.Crypto.encrypt("Hello world", secret);
+const decrypted = await window.Crypto.decrypt(encrypted, secret);
 
-  const form = document.querySelector('[data-crypto-demo]');
-
-  if (!form) {
-    return;
-  }
-
-  const encryptValueInput = form.querySelector('[data-crypto-input]');
-  const encryptValueOutput = form.querySelector('[data-crypto-output]');
-  const decryptValueInput = form.querySelector('[data-crypto-decrypt-input]');
-  const decryptValueOutput = form.querySelector('[data-crypto-decrypt-output]');
-  const encryptJsonInput = form.querySelector('[data-crypto-json-input]');
-  const encryptJsonOutput = form.querySelector('[data-crypto-json-output]');
-  const decryptJsonInput = form.querySelector('[data-crypto-json-decrypt-input]');
-  const decryptJsonOutput = form.querySelector('[data-crypto-json-decrypt-output]');
-  const secretInput = form.querySelector('[data-crypto-secret]');
-
-  if (!encryptValueInput || !encryptValueOutput || !decryptValueInput || !decryptValueOutput || !encryptJsonInput || !encryptJsonOutput || !decryptJsonInput || !decryptJsonOutput || !secretInput) {
-    return;
-  }
-
-  const setMessage = (element, message, isError = false) => {
-    element.textContent = message;
-    element.style.color = isError ? 'var(--danger-color, #d9534f)' : 'var(--text-secondary)';
-  };
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const secret = secretInput.value.trim() || 'elevate';
-    window.Crypto.init(secret);
-
-    const action = event.submitter?.dataset.cryptoAction;
-
-    if (action === 'encrypt-value') {
-      try {
-        const encrypted = await window.Crypto.encrypt(encryptValueInput.value, secret);
-        encryptValueOutput.value = encrypted;
-        setMessage(encryptValueOutput, 'Encrypted value ready.', false);
-      } catch (error) {
-        setMessage(encryptValueOutput, error.message, true);
-      }
-      return;
-    }
-
-    if (action === 'decrypt-value') {
-      try {
-        const decrypted = await window.Crypto.decrypt(decryptValueInput.value, secret);
-        decryptValueOutput.value = typeof decrypted === 'string' ? decrypted : JSON.stringify(decrypted, null, 2);
-        setMessage(decryptValueOutput, 'Decrypted value ready.', false);
-      } catch (error) {
-        setMessage(decryptValueOutput, error.message, true);
-      }
-      return;
-    }
-
-    if (action === 'encrypt-json') {
-      try {
-        const encrypted = await window.Crypto.encjson(encryptJsonInput.value, secret);
-        encryptJsonOutput.value = encrypted;
-        setMessage(encryptJsonOutput, 'Encrypted JSON ready.', false);
-      } catch (error) {
-        setMessage(encryptJsonOutput, error.message, true);
-      }
-      return;
-    }
-
-    if (action === 'decrypt-json') {
-      try {
-        const decrypted = await window.Crypto.decjson(decryptJsonInput.value, secret);
-        decryptJsonOutput.value = JSON.stringify(decrypted, null, 2);
-        setMessage(decryptJsonOutput, 'Decrypted JSON ready.', false);
-      } catch (error) {
-        setMessage(decryptJsonOutput, error.message, true);
-      }
-    }
-  });
-</script>
+const encryptedJson = await window.Crypto.encjson(JSON.stringify({ name: "Ada" }), secret);
+const decryptedJson = await window.Crypto.decjson(encryptedJson, secret);</code></pre>
+    <p class="text-subtitle">For JSON payloads, the helper encrypts both the object keys and the values.</p>
+  </div>
+</article>

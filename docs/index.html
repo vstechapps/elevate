@@ -104,5 +104,51 @@
 
       loadPage(initialPage, false);
     </script>
+    <script>
+
+  const setMessage = (element, message, isError = false) => {
+    element.textContent = message;
+    element.style.color = isError ? 'var(--danger-color, #d9534f)' : 'var(--text-secondary)';
+  };
+
+  var run = async () => {
+    const functionSelect = document.querySelector('[data-crypto-function]');
+    const dataTypeSelect = document.querySelector('[data-crypto-data-type]');
+    const inputField = document.querySelector('[data-crypto-input]');
+    const outputField = document.querySelector('[data-crypto-output]');
+    const inputLabel = document.querySelector('[data-crypto-input-label]');
+    const outputLabel = document.querySelector('[data-crypto-output-label]');
+    const secretInput = document.querySelector('[data-crypto-secret]');
+
+    const secret = secretInput.value.trim() || 'elevate';
+    window.Crypto.init(secret);
+
+    try {
+      const isJson = dataTypeSelect.value === 'json';
+      const isEncrypt = functionSelect.value === 'encrypt';
+
+      if (isJson) {
+        const result = isEncrypt
+          ? await window.Crypto.encjson(inputField.value, secret)
+          : await window.Crypto.decjson(inputField.value, secret);
+
+        outputField.value = result;
+         outputField.value = typeof result === 'string' ? result : JSON.stringify(result, null, 2);
+        setMessage(outputField, isEncrypt ? 'Encrypted JSON ready.' : 'Decrypted JSON ready.', false);
+      } else {
+        const result = isEncrypt
+          ? await window.Crypto.encrypt(inputField.value, secret)
+          : await window.Crypto.decrypt(inputField.value, secret);
+
+        outputField.value = typeof result === 'string' ? result : JSON.stringify(result, null, 2);
+        setMessage(outputField, isEncrypt ? 'Encrypted text ready.' : 'Decrypted text ready.', false);
+      }
+    } catch (error) {
+      outputField.value = '';
+      setMessage(outputField, error.message, true);
+    }
+  };
+</script>
+
   </body>
 </html>

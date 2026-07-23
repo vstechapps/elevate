@@ -135,7 +135,7 @@ async function transformJsonValue(value, customSecret, mode) {
 export async function encjson(json, customSecret = activeSecret) {
   const parsed = typeof json === 'string' ? JSON.parse(json) : json;
   const encrypted = await transformJsonValue(parsed, normalizeSecret(customSecret), 'encrypt');
-  return JSON.stringify(encrypted);
+  return encrypted;
 }
 
 export async function decjson(json, customSecret = activeSecret) {
