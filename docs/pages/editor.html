@@ -1,0 +1,107 @@
+<nav class="breadcrumb text-subtitle" aria-label="Breadcrumb">
+	<a href="?page=overview">Elevate</a>
+	<span class="breadcrumb-separator">/</span>
+	<span aria-current="page">HTML Editor</span>
+</nav>
+
+<div class="html-editor" data-html-editor>
+	<header class="stack">
+		<h1>HTML Editor</h1>
+		<p class="text-lead">Write HTML, inspect the result, and copy a compact or Base64-encoded version.</p>
+	</header>
+
+	<div class="grid grid-2 mt-lg">
+		<section class="html-editor-pane" aria-labelledby="html-input-title">
+            <div class="cluster">
+               <h2 class="text-subtitle" id="html-input-title">Input HTML</h2> 
+               <button class="btn btn-primary btn-sm" type="button" data-html-render>Render</button>
+            </div>
+			
+			<textarea class="textarea mt-lg" data-html-input spellcheck="false" aria-label="HTML input" rows="15"><section><h2>Level up your learning</h2><p>Build momentum one lesson at a time.</p><button class="btn btn-primary">Start a quest</button></section></textarea>
+		</section>
+
+		<section class="html-editor-pane" aria-labelledby="html-preview-title">
+			<h2 class="text-subtitle" id="html-preview-title">Preview</h2>
+			<div class="html-editor-preview mt-lg" style="border: 1px solid var(--border-color); padding: 0.25rem;min-height: 320px;" data-html-preview title="HTML preview"></div>
+		</section>
+	</div>
+
+	<div class="grid grid-2 mt-lg">
+	<section class="html-editor-output-pane" aria-labelledby="html-output-title">
+		<div class="cluster">
+			<h2 class="text-subtitle" id="html-output-title">Minified HTML</h2>
+			<button class="btn btn-subtle btn-sm" type="button" data-html-copy aria-label="Copy minified HTML" title="Copy minified HTML">Copy</button>
+		</div>
+		<textarea class="textarea mt-lg" data-html-output readonly spellcheck="false" aria-label="Minified HTML output"></textarea>
+	</section>
+
+	<section class="html-editor-output-pane" aria-labelledby="html-encoded-title">
+		<div class="cluster">
+			<h2 class="text-subtitle" id="html-encoded-title">Base64 encoded HTML</h2>
+			<button class="btn btn-subtle btn-sm" type="button" data-html-copy-encoded aria-label="Copy Base64 encoded HTML" title="Copy Base64 encoded HTML">Copy</button>
+		</div>
+		<textarea class="textarea mt-lg" data-html-encoded-output readonly spellcheck="false" aria-label="Base64 encoded HTML output"></textarea>
+	</section>
+	</div>
+</div>
+
+<script>
+(() => {
+	const editor = document.querySelector('[data-html-editor]');
+	const input = editor.querySelector('[data-html-input]');
+	const preview = editor.querySelector('[data-html-preview]');
+	const output = editor.querySelector('[data-html-output]');
+	const encodedOutput = editor.querySelector('[data-html-encoded-output]');
+	const status = editor.querySelector('[data-html-status]');
+
+	const minifyHtml = (html) => {
+		const template = document.createElement('template');
+		template.innerHTML = html;
+
+		const compact = (node) => node.childNodes.forEach((child) => {
+			if (child.nodeType === Node.COMMENT_NODE) {
+				child.remove();
+			} else if (child.nodeType === Node.TEXT_NODE) {
+				child.textContent = child.textContent.replace(/\s+/g, ' ').trim();
+				if (!child.textContent) child.remove();
+			} else {
+				compact(child);
+			}
+		});
+
+		compact(template.content);
+		return template.innerHTML.replace(/>\s+</g, '><').trim();
+	};
+
+	const encodeBase64 = (value) => {
+		const bytes = new TextEncoder().encode(value);
+		let binary = '';
+		bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
+		return btoa(binary);
+	};
+
+	const copyText = (value, button) => navigator.clipboard.writeText(value).then(() => {
+		const originalLabel = button.getAttribute('aria-label');
+		const originalTitle = button.getAttribute('title');
+		button.setAttribute('aria-label', 'Copied');
+		button.setAttribute('title', 'Copied');
+		window.setTimeout(() => {
+			button.setAttribute('aria-label', originalLabel);
+			button.setAttribute('title', originalTitle);
+		}, 1200);
+	});
+
+	const render = () => {
+		const minified = minifyHtml(input.value);
+		output.value = minified;
+		encodedOutput.value = encodeBase64(minified);
+		preview.srcdoc = minified;
+		status.textContent = minified ? 'Preview updated' : 'Enter HTML to preview';
+	};
+
+	editor.querySelector('[data-html-render]').addEventListener('click', render);
+	editor.querySelector('[data-html-copy]').addEventListener('click', (event) => copyText(output.value, event.currentTarget));
+	editor.querySelector('[data-html-copy-encoded]').addEventListener('click', (event) => copyText(encodedOutput.value, event.currentTarget));
+	render();
+})();
+</script>
