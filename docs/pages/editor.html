@@ -14,6 +14,7 @@
 		<section class="html-editor-pane" aria-labelledby="html-input-title">
             <div class="cluster">
                <h2 class="text-subtitle" id="html-input-title">Input HTML</h2> 
+			   <button class="btn btn-subtle btn-sm" type="button" data-html-format>Format</button>
                <button class="btn btn-primary btn-sm" type="button" data-html-render>Render</button>
             </div>
 			
@@ -52,7 +53,6 @@
 	const preview = editor.querySelector('[data-html-preview]');
 	const output = editor.querySelector('[data-html-output]');
 	const encodedOutput = editor.querySelector('[data-html-encoded-output]');
-	const status = editor.querySelector('[data-html-status]');
 
 	const minifyHtml = (html) => {
 		const template = document.createElement('template');
@@ -80,6 +80,31 @@
 		return btoa(binary);
 	};
 
+	const formatHtml = (html) => {
+		const template = document.createElement('template');
+		template.innerHTML = html;
+		const inlineTags = new Set(['A', 'ABBR', 'B', 'CODE', 'EM', 'I', 'LABEL', 'SMALL', 'SPAN', 'STRONG']);
+
+		const formatNode = (node, depth = 0) => {
+			if (node.nodeType === Node.TEXT_NODE) return node.textContent.trim();
+			if (node.nodeType !== Node.ELEMENT_NODE) return '';
+
+			const indent = '  '.repeat(depth);
+			const openingTag = `<${node.tagName.toLowerCase()}${[...node.attributes].map((attribute) => ` ${attribute.name}="${attribute.value}"`).join('')}>`;
+			const closingTag = `</${node.tagName.toLowerCase()}>`;
+			const children = [...node.childNodes].map((child) => formatNode(child, depth + 1)).filter(Boolean);
+
+			if (!children.length) return `${indent}${openingTag}${closingTag}`;
+			if (inlineTags.has(node.tagName) || children.length === 1 && node.firstChild.nodeType === Node.TEXT_NODE) {
+				return `${indent}${openingTag}${children.join('')}${closingTag}`;
+			}
+
+			return `${indent}${openingTag}\n${children.join('\n')}\n${indent}${closingTag}`;
+		};
+
+		return [...template.content.children].map((node) => formatNode(node)).join('\n');
+	};
+
 	const copyText = (value, button) => navigator.clipboard.writeText(value).then(() => {
 		const originalLabel = button.getAttribute('aria-label');
 		const originalTitle = button.getAttribute('title');
@@ -95,10 +120,12 @@
 		const minified = minifyHtml(input.value);
 		output.value = minified;
 		encodedOutput.value = encodeBase64(minified);
-		preview.srcdoc = minified;
-		status.textContent = minified ? 'Preview updated' : 'Enter HTML to preview';
+		preview.innerHTML = minified;
 	};
 
+	editor.querySelector('[data-html-format]').addEventListener('click', () => {
+		input.value = formatHtml(input.value);
+	});
 	editor.querySelector('[data-html-render]').addEventListener('click', render);
 	editor.querySelector('[data-html-copy]').addEventListener('click', (event) => copyText(output.value, event.currentTarget));
 	editor.querySelector('[data-html-copy-encoded]').addEventListener('click', (event) => copyText(encodedOutput.value, event.currentTarget));
